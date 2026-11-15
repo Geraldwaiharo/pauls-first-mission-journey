@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta name="description" content="Follow Paul and Barnabas on their first missionary journey through Cyprus and southern Galatia, as told in Acts 13–14.">
+  <title>Paul’s First Journey — A Story Map</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f1e8;
+      --paper-deep: #ebe4d6;
+      --ink: #1d312d;
+      --muted: #64736a;
+      --green: #35584c;
+      --green-dark: #233f37;
+      --terra: #bd684d;
+      --gold: #c79748;
+      --sea: #dce8e4;
+      --line: #d8d1c3;
+      --white: #fffdf8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .skip-link {
+      position: fixed;
+      top: .75rem;
+      left: .75rem;
+      z-index: 20;
+      padding: .65rem 1rem;
+      transform: translateY(-160%);
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { transform: none; }
+    .topbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 62px;
+      padding: 0 clamp(1.2rem, 5vw, 5rem);
+      border-bottom: 1px solid rgba(29, 49, 45, .12);
+      background: rgba(245, 241, 232, .94);
+      backdrop-filter: blur(12px);
+    }
+    .brand {
+      display: flex;
+      gap: .7rem;
+      align-items: center;
+      color: var(--green-dark);
+      font-size: .79rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border: 1px solid var(--green);
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .topbar nav { display: flex; gap: 1.5rem; }
+    .topbar nav a {
+      color: var(--muted);
+      font-size: .78rem;
+      text-decoration: none;
+    }
+    .topbar nav a:hover, .topbar nav a:focus-visible { color: var(--terra); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 11vw, 9.5rem) max(1.25rem, calc((100vw - 1200px) / 2)) 4rem;
+      background:
+        radial-gradient(ellipse at 86% 16%, rgba(199, 151, 72, .12), transparent 28rem),
+        var(--paper);
+    }
+    .hero::after {
+      position: absolute;
+      right: -5rem;
+      bottom: -12rem;
+      width: 35rem;
+      height: 35rem;
+      border: 1px solid rgba(53, 88, 76, .12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2.5rem rgba(53, 88, 76, .025), 0 0 0 5rem rgba(53, 88, 76, .025);
+      content: "";
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: flex;
+      gap: .65rem;
+      align-items: center;
+      margin: 0 0 1.1rem;
+      color: var(--terra);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 26px; height: 1px; background: currentColor; content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    h1 {
+      max-width: 860px;
+      margin-bottom: 1rem;
+      font-size: clamp(3.5rem, 9vw, 7.7rem);
+      letter-spacing: -.065em;
+      line-height: .96;
+    }
+    h1 span { color: var(--terra); font-style: italic; }
+    .hero-intro {
+      max-width: 580px;
+      margin-bottom: 2rem;
+      color: #53625a;
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.36rem);
+      line-height: 1.65;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem 1.6rem; color: var(--muted); font-size: .78rem; }
+    .hero-meta strong { color: var(--ink); font-weight: 700; }
+    .begin-link {
+      display: inline-flex;
+      gap: .65rem;
+      align-items: center;
+      margin-top: 2.1rem;
+      color: var(--green-dark);
+      font-size: .84rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .begin-link span { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--green); border-radius: 50%; }
+
+    .journey-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(265px, .75fr);
+      gap: clamp(1.75rem, 4vw, 4rem);
+      width: min(1200px, calc(100% - 3rem));
+      margin: 0 auto;
+      align-items: start;
+    }
+    .chapters { padding: 2rem 0 6rem; }
+    .chapter {
+      position: relative;
+      min-height: 64vh;
+      padding: clamp(2.5rem, 7vh, 5.5rem) 0 clamp(3rem, 8vh, 6.5rem) 2rem;
+      border-left: 1px solid var(--line);
+      scroll-margin-top: 5.5rem;
+    }
+    .chapter:last-child { min-height: 50vh; }
+    .chapter::before {
+      position: absolute;
+      top: 3.35rem;
+      left: -5px;
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--terra);
+      border-radius: 50%;
+      background: var(--paper);
+      content: "";
+      transition: background .25s, box-shadow .25s;
+    }
+    .chapter.is-active::before { background: var(--terra); box-shadow: 0 0 0 5px rgba(189, 104, 77, .12); }
+    .chapter-number { margin-bottom: .65rem; color: var(--terra); font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .chapter h2 { max-width: 560px; margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -.035em; line-height: 1.1; }
+    .chapter p { max-width: 580px; color: #53625a; font-size: .97rem; }
+    .chapter .lead { color: var(--ink); font-family: var(--serif); font-size: 1.16rem; line-height: 1.6; }
+    .scripture {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin: .35rem 0 1.25rem;
+      padding: .35rem .7rem;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .045em;
+      text-decoration: none;
+    }
+    .scripture::before { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); content: ""; }
+    .scripture:hover { border-color: var(--green); }
+    .note {
+      max-width: 540px;
+      margin-top: 1.4rem;
+      padding: .85rem 1rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(235, 228, 214, .55);
+      color: #59665d;
+      font-size: .82rem;
+    }
+    .note strong { color: var(--ink); }
+
+    .map-column { position: sticky; top: 78px; width: 100%; max-width: 360px; justify-self: end; padding: 1.1rem 0 2rem; }
+    .map-card {
+      overflow: hidden;
+      border: 1px solid rgba(29, 49, 45, .15);
+      border-radius: 3px;
+      background: var(--white);
+      box-shadow: 0 18px 55px rgba(43, 53, 44, .08);
+    }
+    .map-heading { display: flex; justify-content: space-between; gap: .6rem; align-items: flex-start; padding: 1rem 1rem .5rem; }
+    .map-heading h2 { margin: 0; font-size: 1.15rem; letter-spacing: -.02em; }
+    .map-heading p { margin: .2rem 0 0; color: var(--muted); font-size: .68rem; }
+    .map-counter { padding: .25rem .48rem; border: 1px solid var(--line); color: var(--terra); font-size: .68rem; font-weight: 800; white-space: nowrap; }
+    .map-compact-place { display: none; max-width: 10rem; overflow: hidden; color: var(--muted); font-size: .7rem; text-overflow: ellipsis; white-space: nowrap; }
+    .map-body[hidden] { display: none; }
+    .map-controls { display: flex; gap: .35rem; align-items: center; padding: .25rem .8rem .35rem; }
+    .map-controls button, .map-toggle {
+      min-width: 32px;
+      min-height: 30px;
+      padding: .25rem .5rem;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: var(--white);
+      color: var(--green-dark);
+      cursor: pointer;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .map-controls button:hover, .map-toggle:hover { border-color: var(--green); background: #f3f5ef; }
+    .map-controls button:focus-visible, .map-toggle:focus-visible, .map-pin:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .map-controls .zoom-level { min-width: 3.2rem; color: var(--muted); font-size: .67rem; text-align: center; }
+    .map-controls .map-help { margin-left: auto; color: var(--muted); font-size: .64rem; }
+    .map-toggle { display: none; min-width: auto; white-space: nowrap; }
+    .map-viewport { padding: 0 .25rem; overflow: hidden; }
+    .map-viewport svg { display: block; width: 100%; height: auto; }
+    .land { fill: #eee8d9; stroke: #cfc7b5; stroke-width: 1.5; }
+    .coast-detail { fill: none; stroke: #d7cebd; stroke-width: 1; }
+    .water-label { fill: #809790; font-family: var(--serif); font-size: 15px; font-style: italic; letter-spacing: 2px; }
+    .region-label { fill: #9a9585; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+    .route-under { fill: none; stroke: #fffdf8; stroke-linecap: round; stroke-linejoin: round; stroke-width: 7; }
+    .route-line { fill: none; stroke: var(--terra); stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
+    .route-part { opacity: .16; transition: opacity .3s, stroke-width .3s; }
+    .route-part.is-past { opacity: .62; }
+    .route-part.is-active { opacity: 1; stroke-width: 3.6; }
+    .route-return { stroke: var(--green); }
+    .route-return.is-active { stroke-width: 3.6; }
+    .map-pin { cursor: pointer; }
+    .map-pin circle { fill: var(--white); stroke: var(--green); stroke-width: 2; transition: fill .2s, r .2s; }
+    .map-pin.is-active circle { fill: var(--terra); stroke: white; stroke-width: 3; }
+    .map-pin.is-past circle { fill: var(--green); }
+    .map-pin text { fill: var(--ink); font-family: var(--sans); font-size: 11px; font-weight: 700; paint-order: stroke; stroke: var(--white); stroke-linejoin: round; stroke-width: 4px; }
+    .map-pin.is-active text { fill: var(--terra); font-size: 12px; }
+    .map-caption { display: flex; justify-content: space-between; gap: .8rem; align-items: center; padding: .15rem 1.3rem .9rem; color: var(--muted); font-size: .69rem; }
+    .legend { display: flex; gap: 1rem; align-items: center; }
+    .legend-item { display: inline-flex; gap: .36rem; align-items: center; }
+    .legend-line { width: 18px; border-top: 2px dashed var(--terra); }
+    .legend-line.return { border-color: var(--green); }
+    .map-current { min-height: 78px; padding: .75rem 1rem .9rem; border-top: 1px solid #e8e3d9; background: #faf8f2; }
+    .map-current small { display: block; margin-bottom: .15rem; color: var(--terra); font-size: .64rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .map-current strong { font-family: var(--serif); font-size: 1.14rem; font-weight: 400; }
+    .map-current span { float: right; padding-top: .2rem; color: var(--muted); font-size: .72rem; }
+    .map-description { margin: .3rem 0 0; color: #64736a; font-size: .72rem; line-height: 1.45; }
+    .map-read-link { display: inline-block; margin-top: .45rem; color: var(--green); font-size: .7rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    .map-note { margin: .7rem .2rem 0; color: #758078; font-size: .68rem; line-height: 1.5; }
+
+    .closing {
+      padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+      background: var(--green-dark);
+      color: #f7f2e7;
+      text-align: center;
+    }
+    .closing .eyebrow { justify-content: center; color: #e2b875; }
+    .closing h2 { max-width: 780px; margin: 0 auto 1rem; font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.04em; line-height: 1.08; }
+    .closing > p:not(.eyebrow) { max-width: 650px; margin: 0 auto; color: #d1d9cf; font-family: var(--serif); font-size: 1.15rem; }
+    .closing .scripture { margin-top: 1.5rem; border-color: rgba(255,255,255,.32); color: #f7f2e7; }
+    .footer { padding: 1rem; color: var(--muted); font-size: .7rem; text-align: center; }
+    .no-script { margin: 1rem; padding: .75rem; background: #fff3d4; color: #493c22; font-size: .85rem; }
+
+    @media (max-width: 850px) {
+      .hero { padding-top: 5.5rem; }
+      .journey-layout { grid-template-columns: 1fr; gap: 0; width: min(650px, calc(100% - 2.5rem)); }
+      .map-column { position: relative; top: auto; width: 100%; max-width: none; justify-self: stretch; z-index: 5; order: -1; padding: .35rem 0 .1rem; }
+      .map-column.is-collapsed { position: sticky; top: 55px; }
+      .map-card { box-shadow: 0 8px 24px rgba(43, 53, 44, .12); }
+      .map-heading { align-items: center; padding: .45rem .7rem; }
+      .map-heading h2 { font-size: .98rem; }
+      .map-heading p { display: none; }
+      .map-compact-place { display: inline-block; }
+      .map-toggle { display: inline-block; }
+      .map-viewport { max-height: 34vh; }
+      .map-viewport svg { width: min(100%, 280px); max-height: 32vh; margin: 0 auto; }
+      .map-caption { padding: 0 .8rem .45rem; font-size: .63rem; }
+      .map-current { min-height: 0; padding: .55rem .8rem .65rem; }
+      .map-current strong { font-size: .96rem; }
+      .map-current span { font-size: .64rem; }
+      .map-description { font-size: .68rem; }
+      .map-note { display: none; }
+      .chapters { padding-top: .5rem; }
+      .chapter { min-height: 64vh; padding: 3rem 0 4rem 1.4rem; }
+      .chapter::before { top: 3.45rem; }
+    }
+    @media (max-width: 520px) {
+      .map-counter { display: none; }
+      .map-controls .map-help { display: none; }
+    }
+    @media (max-width: 520px) {
+      .topbar { min-height: 56px; padding: 0 1rem; }
+      .topbar nav { gap: .8rem; }
+      .topbar nav a { font-size: .7rem; }
+      .brand { font-size: .68rem; }
+      .brand-mark { width: 27px; height: 27px; }
+      .hero { padding: 4.5rem 1.25rem 3.5rem; }
+      h1 { font-size: clamp(3.15rem, 16vw, 5rem); }
+      .hero-meta { gap: .4rem 1rem; font-size: .72rem; }
+      .map-column { top: 50px; }
+      .map-viewport { max-height: 32vh; }
+      .map-viewport svg { max-height: 32vh; }
+      .legend { gap: .6rem; }
+      .chapter { min-height: 66vh; }
+      .chapter p { font-size: .92rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#journey">Skip to the journey</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Paul’s First Journey, top of page"><span class="brand-mark">π</span> Acts in motion</a>
+    <nav aria-label="Page navigation">
+      <a href="#journey">The route</a>
+      <a href="#reading">Read Acts 13–14</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">A story map · Acts 13–14</p>
+      <h1 id="page-title">Paul’s<br><span>first journey.</span></h1>
+      <p class="hero-intro">A small team leaves Antioch in Syria, crosses the sea, and carries a new message through Cyprus and the Roman province of Galatia. Follow the road, the resistance, and the communities that take root along the way.</p>
+      <div class="hero-meta" aria-label="Journey details">
+        <span><strong>People</strong> Paul · Barnabas · John Mark</span>
+        <span><strong>Approx.</strong> AD 46–48</span>
+        <span><strong>Account</strong> Acts 13–14</span>
+      </div>
+      <a class="begin-link" href="#journey"><span aria-hidden="true">↓</span> Scroll to travel with them</a>
+    </section>
+
+    <section class="journey-layout" id="journey" aria-label="Journey map and story">
+      <div class="chapters">
+        <article class="chapter is-active" id="chapter-1" data-stop="1" data-place="Antioch in Syria" data-region="Departure · Syria">
+          <p class="chapter-number">01 · The sending</p>
+          <h2>A community sends them out</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013%3A1-3&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 13:1–3</a>
+          <p class="lead">The journey begins not with a lone adventurer, but with a worshipping community listening together.</p>
+          <p>At Antioch in Syria, prophets and teachers include Barnabas and Saul (later known by his Roman name, Paul). While the community is worshipping and fasting, the Holy Spirit calls Barnabas and Saul to a work. After prayer and the laying on of hands, the community sends them on their way.</p>
+          <p>They travel first to Seleucia, Antioch’s port, and sail for Cyprus. John Mark goes with them as their assistant. The account doesn’t give a ship’s name, travel time, or exact route at sea; the map shows the broad direction, not a modern navigational chart.</p>
+          <div class="note"><strong>Keep the names straight:</strong> Saul is also called Paul from Acts 13:9 onward. This is the first of the journeys traditionally called Paul’s missionary journeys.</div>
+        </article>
+
+        <article class="chapter" id="chapter-2" data-stop="2" data-place="Salamis · Cyprus" data-region="Arrival · Cyprus">
+          <p class="chapter-number">02 · Across to Cyprus</p>
+          <h2>First, the island’s eastern port</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013%3A4-5&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 13:4–5</a>
+          <p class="lead">From Seleucia, the team crosses the eastern Mediterranean to Cyprus, Barnabas’s home region.</p>
+          <p>They land at Salamis, on Cyprus’s east coast, and proclaim the word of God in the Jewish synagogues. John Mark is with them. Luke gives only a brief description here, but the choice of Salamis puts the travelers in a major town with an established Jewish community.</p>
+          <p>Cyprus is not just a stop on the way somewhere else: the team travels across the island before leaving it. The narrative names the ports and people that matter to its account, rather than cataloguing every village or mile.</p>
+          <div class="note"><strong>On the map:</strong> The dotted sea route is illustrative. Acts says they sailed from Seleucia to Cyprus; it does not specify their exact course.</div>
+        </article>
+
+        <article class="chapter" id="chapter-3" data-stop="3" data-place="Paphos · Cyprus" data-region="The western coast">
+          <p class="chapter-number">03 · The governor listens</p>
+          <h2>A meeting in Paphos</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013%3A6-12&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 13:6–12</a>
+          <p class="lead">On the western side of Cyprus, the message reaches the Roman governor’s court.</p>
+          <p>In Paphos, the missionaries meet Sergius Paulus, the proconsul, who wants to hear God’s word. Elymas, a Jewish magician and false prophet, opposes them and tries to turn the proconsul away from the faith. Paul confronts him; Luke describes Elymas temporarily losing his sight.</p>
+          <p>Sergius Paulus believes, amazed at the teaching about the Lord. Acts presents this as a decisive encounter, not a formula for how every conversation or conversion will unfold.</p>
+          <div class="note"><strong>Names in Acts:</strong> The text calls the proconsul “an intelligent man” and distinguishes him from Elymas. It does not say that the whole island converted.</div>
+        </article>
+
+        <article class="chapter" id="chapter-4" data-stop="4" data-place="Perga · Pamphylia" data-region="Across to Asia Minor">
+          <p class="chapter-number">04 · A change in the team</p>
+          <h2>From the coast, inland</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013%3A13&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 13:13</a>
+          <p class="lead">The travelers leave Cyprus for Perga, in Pamphylia on the southern coast of Asia Minor.</p>
+          <p>At Perga, John Mark leaves the group and returns to Jerusalem. Luke reports the departure without explaining his reason here. The remaining team—Paul and Barnabas—continues inland toward Pisidian Antioch.</p>
+          <p>That change matters later: Acts 15 records a sharp disagreement between Paul and Barnabas about taking John Mark on another journey. For now, the story moves north from the coast into the uplands.</p>
+          <div class="note"><strong>Geography:</strong> “Pisidian Antioch” is a different city from Antioch in Syria, where the journey began. The qualifier “of Pisidia” helps distinguish them.</div>
+        </article>
+
+        <article class="chapter" id="chapter-5" data-stop="5" data-place="Pisidian Antioch" data-region="The highlands · Galatia">
+          <p class="chapter-number">05 · A sermon and a split response</p>
+          <h2>Good news in the synagogue</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013%3A14-52&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 13:14–52</a>
+          <p class="lead">Invited to speak, Paul traces Israel’s story and announces Jesus as its fulfillment.</p>
+          <p>On a Sabbath in Pisidian Antioch, Paul speaks in the synagogue. He recalls God’s care for Israel, the kings, and David, then proclaims Jesus’ death and resurrection and forgiveness through him. The speech is one of Acts’ fullest examples of Paul addressing a synagogue audience.</p>
+          <p>Many listeners ask to hear more. The next Sabbath, a large crowd gathers; some welcome the message, while others oppose Paul and Barnabas. The missionaries say they will also turn to the Gentiles. Acts describes both joy among many new believers and the pair’s expulsion from the district.</p>
+          <div class="note"><strong>Not a simple “everyone versus everyone” story:</strong> Luke describes varied responses among both Jewish and Gentile hearers. Paul and Barnabas shake the dust from their feet and continue, while new disciples remain.</div>
+        </article>
+
+        <article class="chapter" id="chapter-6" data-stop="6" data-place="Iconium" data-region="A new city">
+          <p class="chapter-number">06 · Staying despite opposition</p>
+          <h2>In Iconium, the work grows</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2014%3A1-7&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 14:1–7</a>
+          <p class="lead">In Iconium, Paul and Barnabas again begin in the synagogue—and again the response is divided.</p>
+          <p>Many Jews and Greeks believe. Others stir up opposition. The two remain for a considerable time, speaking boldly, and Acts says signs and wonders accompany their message. The city becomes divided; when a plan to mistreat and stone them comes to light, they flee to the surrounding region.</p>
+          <p>They do not interpret leaving as the end of the mission. They go on to nearby towns and keep proclaiming the good news.</p>
+          <div class="note"><strong>A repeated pattern:</strong> proclamation, a mixed response, the formation of a community, and movement onward. The route is not frictionless, but neither is it simply a story of retreat.</div>
+        </article>
+
+        <article class="chapter" id="chapter-7" data-stop="7" data-place="Lystra" data-region="The Lycaonian countryside">
+          <p class="chapter-number">07 · Misunderstood in Lystra</p>
+          <h2>When the crowd gets it wrong</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2014%3A8-20&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 14:8–20</a>
+          <p class="lead">A healing draws a crowd, but the crowd misunderstands who the missionaries are.</p>
+          <p>In Lystra, Paul heals a man who had been unable to walk since birth. The people cry out in the local Lycaonian language, calling Barnabas Zeus and Paul Hermes. The priest of Zeus brings oxen and garlands, preparing a sacrifice.</p>
+          <p>Paul and Barnabas tear their clothes and rush into the crowd. They insist they are human beings and point instead to the living God, creator of heaven, earth, sea, and all that is in them. Soon, opponents arrive from Pisidian Antioch and Iconium; Paul is stoned and dragged outside the city, but survives.</p>
+          <div class="note"><strong>Acts 14:11 notes</strong> that the crowd spoke in Lycaonian. The text’s focus is the sharp contrast between the crowd’s acclaim and the missionaries’ insistence that worship belongs to God.</div>
+        </article>
+
+        <article class="chapter" id="chapter-8" data-stop="8" data-place="Derbe" data-region="The outward turning point">
+          <p class="chapter-number">08 · Further along the road</p>
+          <h2>Derbe—and then back again</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2014%3A20-23&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 14:20–23</a>
+          <p class="lead">With the disciples around him, Paul gets up and goes with Barnabas to Derbe.</p>
+          <p>They proclaim the good news in Derbe and make many disciples. Then comes a striking choice: instead of taking the easiest route home, they retrace their steps through Lystra, Iconium, and Pisidian Antioch—the places where they had faced danger.</p>
+          <p>They strengthen the disciples, encourage them to remain in the faith, and appoint elders in each church with prayer and fasting. The outward journey has become a return journey of care: the new communities are not left behind.</p>
+          <div class="note"><strong>Map key:</strong> The terracotta dotted line marks the outward route; the green dotted line marks the return through the inland towns. The map is schematic and not to scale.</div>
+        </article>
+
+        <article class="chapter" id="chapter-9" data-stop="9" data-place="Perga & Attalia" data-region="Back to the coast">
+          <p class="chapter-number">09 · Completing the circuit</p>
+          <h2>Back through Pamphylia</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2014%3A24-26&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 14:24–26</a>
+          <p class="lead">After traveling through Pisidia, Paul and Barnabas reach Pamphylia and speak in Perga.</p>
+          <p>They then go down to Attalia, a port on the coast, and sail back to Antioch in Syria—the community that had entrusted them to God’s grace for this work. Acts gives no sailing details or precise dates for these stages.</p>
+          <p>Their return closes a geographic loop, but it also brings the story home to the people who sent them. The journey is not a solo achievement: it is shared, supported, and reported back.</p>
+          <div class="note"><strong>Two Antiochs:</strong> Pisidian Antioch lies inland in Asia Minor; Syrian Antioch is the eastern Mediterranean base where the journey began and ended.</div>
+        </article>
+
+        <article class="chapter" id="chapter-10" data-stop="10" data-place="Antioch in Syria" data-region="Home · and the story continues">
+          <p class="chapter-number">10 · The report</p>
+          <h2>They gather the church</h2>
+          <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2014%3A27-28&version=NRSVUE" target="_blank" rel="noopener noreferrer">Acts 14:27–28</a>
+          <p class="lead">Back in Antioch, they gather the community and tell what God has done with them.</p>
+          <p>They report that God has opened a door of faith for the Gentiles, and they stay with the disciples for a long time. The account ends not with a triumphant travelogue, but with a shared testimony and a growing community.</p>
+          <p>Acts 13–14 records places, speeches, welcome, conflict, healing, danger, and return. Its route can be followed on a map; its deeper arc is the formation and strengthening of communities across cultural and geographic boundaries.</p>
+        </article>
+      </div>
+
+      <aside class="map-column" aria-label="Interactive map of Paul's first journey">
+        <div class="map-card">
+          <div class="map-heading">
+            <div><h2>The route, in outline</h2><p>Eastern Mediterranean · schematic view</p></div>
+            <span class="map-counter" id="map-counter" aria-live="polite">STOP 01 / 10</span>
+            <span class="map-compact-place" id="compact-place">Antioch in Syria</span>
+            <button class="map-toggle" id="map-toggle" type="button" aria-expanded="true" aria-controls="map-body">Hide map</button>
+          </div>
+          <div class="map-body" id="map-body">
+          <div class="map-controls" aria-label="Map controls">
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="zoom-reset">Reset</button>
+            <span class="zoom-level" id="zoom-level" aria-live="polite">100%</span>
+            <span class="map-help">Drag to pan · click a place</span>
+          </div>
+          <div class="map-viewport">
+            <svg viewBox="0 0 620 440" role="group" aria-labelledby="map-title map-desc">
+              <title id="map-title">Schematic map of Paul and Barnabas’s first journey</title>
+              <desc id="map-desc">The journey starts at Antioch in Syria, crosses to Cyprus, travels north to Pisidian Antioch, Iconium, Lystra, and Derbe, then returns through the inland towns and the coast to Syrian Antioch.</desc>
+              <g id="map-art">
+              <rect x="0" y="0" width="620" height="440" rx="2" fill="#dce8e4"/>
+              <path class="land" d="M0 0H620V76L592 83 566 75 548 89 529 94 514 110 490 112 472 127 449 130 432 145 409 148 393 160 382 176 361 187 347 201 326 207 315 225 298 238 283 242 267 234 253 224 238 229 223 239 206 235 194 218 180 213 167 196 150 190 139 175 122 173 109 155 94 147 84 127 66 122 56 105 36 99 26 84 0 80Z"/>
+              <path class="land" d="M440 258L460 247 480 252 492 263 508 264 518 274 529 281 526 292 514 297 504 291 490 293 476 286 464 287 451 280 440 274Z"/>
+              <path class="land" d="M563 209L580 203 597 208 611 218 620 225V251L607 246 595 238 581 235 568 225Z"/>
+              <path class="coast-detail" d="M12 47C103 60 162 47 240 57S382 75 465 66M18 275C111 263 155 282 220 272"/>
+              <text class="water-label" x="112" y="331">MEDITERRANEAN SEA</text>
+              <text class="water-label" x="488" y="318">CYPRUS</text>
+              <text class="region-label" x="62" y="110">ASIA MINOR</text>
+              <text class="region-label" x="270" y="183">PISIDIA</text>
+              <text class="region-label" x="338" y="238">CILICIA</text>
+              <text class="region-label" x="518" y="164">SYRIA</text>
+
+              <g aria-hidden="true">
+                <path class="route-under" d="M544 177 Q530 174 515 174"/>
+                <path class="route-line route-part" data-route="1" d="M544 177 Q530 174 515 174"/>
+                <path class="route-under" d="M515 174 Q493 199 471 229 Q460 242 489 270"/>
+                <path class="route-line route-part" data-route="2" d="M515 174 Q493 199 471 229 Q460 242 489 270"/>
+                <path class="route-under" d="M489 270 Q476 261 447 258"/>
+                <path class="route-line route-part" data-route="3" d="M489 270 Q476 261 447 258"/>
+                <path class="route-under" d="M447 258 Q465 236 445 205 Q420 174 388 138"/>
+                <path class="route-line route-part" data-route="4" d="M447 258 Q465 236 445 205 Q420 174 388 138"/>
+                <path class="route-under" d="M388 138 Q333 109 286 108"/>
+                <path class="route-line route-part" data-route="5" d="M388 138 Q333 109 286 108"/>
+                <path class="route-under" d="M286 108 Q306 91 326 88"/>
+                <path class="route-line route-part" data-route="6" d="M286 108 Q306 91 326 88"/>
+                <path class="route-under" d="M326 88 Q340 103 350 115"/>
+                <path class="route-line route-part" data-route="7" d="M326 88 Q340 103 350 115"/>
+                <path class="route-under" d="M350 115 Q387 132 420 150"/>
+                <path class="route-line route-part" data-route="8" d="M350 115 Q387 132 420 150"/>
+                <path class="route-under" d="M420 150 Q386 135 350 115 Q326 88 286 108 Q333 109 388 138 Q420 174 445 205 Q465 236 489 270"/>
+                <path class="route-line route-return route-part" data-route="9" d="M420 150 Q386 135 350 115 Q326 88 286 108 Q333 109 388 138 Q420 174 445 205 Q465 236 489 270"/>
+                <path class="route-under" d="M489 270 Q476 263 447 258 Q460 242 471 229"/>
+                <path class="route-line route-return route-part" data-route="10" d="M489 270 Q476 263 447 258 Q460 242 471 229"/>
+                <path class="route-under" d="M471 229 Q493 199 515 174 Q530 174 544 177"/>
+                <path class="route-line route-return route-part" data-route="10" d="M471 229 Q493 199 515 174 Q530 174 544 177"/>
+              </g>
+              <g class="map-pin" data-pin="1 10" data-story="chapter-1" tabindex="0" role="button" aria-label="Antioch in Syria. Open the journey story." transform="translate(544 177)"><circle r="5"/><text x="10" y="-8">Antioch (Syria)</text></g>
+              <g class="map-pin" data-pin="0" data-story="chapter-1" tabindex="0" role="button" aria-label="Seleucia. Open the departure story." transform="translate(515 174)"><circle r="4.5"/><text x="10" y="17">Seleucia</text></g>
+              <g class="map-pin" data-pin="2" data-story="chapter-2" tabindex="0" role="button" aria-label="Salamis, Cyprus. Open the Cyprus story." transform="translate(489 270)"><circle r="5"/><text x="9" y="18">Salamis</text></g>
+              <g class="map-pin" data-pin="3" data-story="chapter-3" tabindex="0" role="button" aria-label="Paphos, Cyprus. Open the governor story." transform="translate(447 258)"><circle r="5"/><text x="-46" y="19">Paphos</text></g>
+              <g class="map-pin" data-pin="4 9" data-story="chapter-4" tabindex="0" role="button" aria-label="Perga. Open the coast and inland story." transform="translate(471 229)"><circle r="4.5"/><text x="10" y="2">Perga</text></g>
+              <g class="map-pin" data-pin="5" data-story="chapter-5" tabindex="0" role="button" aria-label="Pisidian Antioch. Open the synagogue story." transform="translate(388 138)"><circle r="5"/><text x="-86" y="-9">Pisidian Antioch</text></g>
+              <g class="map-pin" data-pin="6" data-story="chapter-6" tabindex="0" role="button" aria-label="Iconium. Open the Iconium story." transform="translate(286 108)"><circle r="5"/><text x="-49" y="-10">Iconium</text></g>
+              <g class="map-pin" data-pin="7" data-story="chapter-7" tabindex="0" role="button" aria-label="Lystra. Open the Lystra story." transform="translate(326 88)"><circle r="5"/><text x="9" y="-4">Lystra</text></g>
+              <g class="map-pin" data-pin="8" data-story="chapter-8" tabindex="0" role="button" aria-label="Derbe. Open the return journey story." transform="translate(350 115)"><circle r="5"/><text x="10" y="17">Derbe</text></g>
+              <g class="map-pin" data-pin="9" data-story="chapter-9" tabindex="0" role="button" aria-label="Attalia. Open the return to Antioch story." transform="translate(460 242)"><circle r="4.5"/><text x="-43" y="-8">Attalia</text></g>
+              <g transform="translate(574 34)" aria-hidden="true">
+                <path d="M0 21L7 0 14 21 7 17Z" fill="#35584c"/>
+                <text x="7" y="33" text-anchor="middle" fill="#64736a" font-family="Arial,sans-serif" font-size="9" font-weight="700">N</text>
+              </g>
+              </g>
+            </svg>
+          </div>
+          <div class="map-caption">
+            <div class="legend" aria-label="Map route legend"><span class="legend-item"><i class="legend-line"></i>Outward</span><span class="legend-item"><i class="legend-line return"></i>Return</span></div>
+            <span>North ↑</span>
+          </div>
+          <div class="map-current" aria-live="polite" aria-atomic="true">
+            <small>Now at</small>
+            <strong id="current-place">Antioch in Syria</strong>
+            <span id="current-region">Departure · Syria</span>
+            <p class="map-description" id="map-description">A worshipping community sends Barnabas and Saul from Antioch toward Cyprus.</p>
+            <a class="map-read-link" id="map-read-link" href="#chapter-1">Read this stop ↓</a>
+          </div>
+          </div>
+        </div>
+        <p class="map-note">Illustrative, not to scale. Acts names key towns but does not give precise roads or sailing courses. The locations and broad order are based on Acts 13–14.</p>
+      </aside>
+    </section>
+
+    <section class="closing" id="reading" aria-labelledby="closing-title">
+      <p class="eyebrow">The story so far</p>
+      <h2 id="closing-title">A road that ends where it began—changed by the people along it.</h2>
+      <p>Paul and Barnabas return to Antioch and tell the church what God has done. Read the journey in its own words, with room for the places, the pauses, and the people in the story.</p>
+      <a class="scripture" href="https://www.biblegateway.com/passage/?search=Acts%2013-14&version=NRSVUE" target="_blank" rel="noopener noreferrer">Read Acts 13–14 in full ↗</a>
+    </section>
+  </main>
+  <footer class="footer">A visual companion to Acts 13–14 · Dates and routes are approximate; map is schematic.</footer>
+  <noscript><p class="no-script">The complete story is on this page. Turn on JavaScript to see the map update as you scroll.</p></noscript>
+  <script>
+    (function () {
+      "use strict";
+      var chapters = Array.prototype.slice.call(document.querySelectorAll(".chapter"));
+      var pins = Array.prototype.slice.call(document.querySelectorAll("[data-pin]"));
+      var routes = Array.prototype.slice.call(document.querySelectorAll("[data-route]"));
+      var currentPlace = document.getElementById("current-place");
+      var currentRegion = document.getElementById("current-region");
+      var counter = document.getElementById("map-counter");
+      var mapSvg = document.querySelector(".map-viewport svg");
+      var zoomLabel = document.getElementById("zoom-level");
+      var mapBody = document.getElementById("map-body");
+      var mapToggle = document.getElementById("map-toggle");
+      var mapDescription = document.getElementById("map-description");
+      var mapReadLink = document.getElementById("map-read-link");
+      var compactPlace = document.getElementById("compact-place");
+      var activeIndex = -1;
+      var zoom = 1;
+      var viewX = 0;
+      var viewY = 0;
+      var viewWidth = 620;
+      var viewHeight = 440;
+      var drag = null;
+
+      function activate(chapter) {
+        var index = chapters.indexOf(chapter);
+        if (index < 0 || index === activeIndex) return;
+        activeIndex = index;
+        chapters.forEach(function (item, itemIndex) {
+          item.classList.toggle("is-active", itemIndex === index);
+        });
+        pins.forEach(function (pin) {
+          var pinNumbers = pin.getAttribute("data-pin").split(" ").map(Number);
+          var isActive = pinNumbers.indexOf(index + 1) !== -1;
+          var isPast = pinNumbers.every(function (pinNumber) { return pinNumber > 0 && pinNumber < index + 1; });
+          pin.classList.toggle("is-active", isActive);
+          pin.classList.toggle("is-past", !isActive && isPast);
+        });
+        routes.forEach(function (route) {
+          var routeNumber = Number(route.getAttribute("data-route"));
+          route.classList.toggle("is-active", routeNumber === index + 1);
+          route.classList.toggle("is-past", routeNumber < index + 1);
+        });
+        currentPlace.textContent = chapter.getAttribute("data-place");
+        compactPlace.textContent = chapter.getAttribute("data-place");
+        currentRegion.textContent = chapter.getAttribute("data-region");
+        mapDescription.textContent = chapter.querySelector(".lead").textContent;
+        mapReadLink.href = "#" + chapter.id;
+        counter.textContent = "STOP " + String(index + 1).padStart(2, "0") + " / " + String(chapters.length).padStart(2, "0");
+      }
+
+      function renderMap() {
+        viewWidth = 620 / zoom;
+        viewHeight = 440 / zoom;
+        viewX = Math.max(0, Math.min(620 - viewWidth, viewX));
+        viewY = Math.max(0, Math.min(440 - viewHeight, viewY));
+        mapSvg.setAttribute("viewBox", [viewX, viewY, viewWidth, viewHeight].join(" "));
+        zoomLabel.textContent = Math.round(zoom * 100) + "%";
+      }
+
+      function setZoom(nextZoom, focusX, focusY) {
+        var oldWidth = viewWidth;
+        var oldHeight = viewHeight;
+        var next = Math.max(1, Math.min(3, nextZoom));
+        if (next === zoom) return;
+        var relativeX = focusX === undefined ? .5 : focusX;
+        var relativeY = focusY === undefined ? .5 : focusY;
+        var centerX = viewX + oldWidth * relativeX;
+        var centerY = viewY + oldHeight * relativeY;
+        zoom = next;
+        viewWidth = 620 / zoom;
+        viewHeight = 440 / zoom;
+        viewX = centerX - viewWidth * relativeX;
+        viewY = centerY - viewHeight * relativeY;
+        renderMap();
+      }
+
+      document.getElementById("zoom-in").addEventListener("click", function () { setZoom(zoom * 1.25); });
+      document.getElementById("zoom-out").addEventListener("click", function () { setZoom(zoom / 1.25); });
+      document.getElementById("zoom-reset").addEventListener("click", function () {
+        zoom = 1;
+        viewX = 0;
+        viewY = 0;
+        renderMap();
+      });
+      mapSvg.addEventListener("wheel", function (event) {
+        event.preventDefault();
+        var bounds = mapSvg.getBoundingClientRect();
+        setZoom(zoom * (event.deltaY < 0 ? 1.15 : 1 / 1.15),
+          (event.clientX - bounds.left) / bounds.width,
+          (event.clientY - bounds.top) / bounds.height);
+      }, { passive: false });
+      mapSvg.addEventListener("pointerdown", function (event) {
+        if (event.target.closest(".map-pin")) return;
+        drag = { x: event.clientX, y: event.clientY, viewX: viewX, viewY: viewY };
+        mapSvg.setPointerCapture(event.pointerId);
+      });
+      mapSvg.addEventListener("pointermove", function (event) {
+        if (!drag) return;
+        var bounds = mapSvg.getBoundingClientRect();
+        viewX = drag.viewX - (event.clientX - drag.x) * viewWidth / bounds.width;
+        viewY = drag.viewY - (event.clientY - drag.y) * viewHeight / bounds.height;
+        renderMap();
+      });
+      mapSvg.addEventListener("pointerup", function () { drag = null; });
+      mapSvg.addEventListener("pointercancel", function () { drag = null; });
+
+      function openStoryFromPin(pin) {
+        var chapter = document.getElementById(pin.getAttribute("data-story"));
+        if (!chapter) return;
+        chapter.scrollIntoView({ behavior: "smooth", block: "start" });
+        chapter.setAttribute("tabindex", "-1");
+        chapter.focus({ preventScroll: true });
+      }
+      pins.forEach(function (pin) {
+        pin.addEventListener("click", function () { openStoryFromPin(pin); });
+        pin.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openStoryFromPin(pin);
+          }
+        });
+      });
+      function setMapExpanded(expanded) {
+        mapBody.hidden = !expanded;
+        mapToggle.setAttribute("aria-expanded", String(expanded));
+        mapToggle.textContent = expanded ? "Hide map" : "Show map";
+        document.querySelector(".map-column").classList.toggle("is-collapsed",
+          window.matchMedia("(max-width: 850px)").matches && !expanded);
+      }
+      mapToggle.addEventListener("click", function () {
+        setMapExpanded(mapToggle.getAttribute("aria-expanded") !== "true");
+      });
+      var compactLayout = window.matchMedia("(max-width: 850px)");
+      function updateMapLayout(event) { setMapExpanded(!event.matches); }
+      updateMapLayout(compactLayout);
+      if (compactLayout.addEventListener) compactLayout.addEventListener("change", updateMapLayout);
+      else compactLayout.addListener(updateMapLayout);
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          var visible = entries.filter(function (entry) { return entry.isIntersecting; });
+          if (visible.length) {
+            visible.sort(function (a, b) {
+              return Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top);
+            });
+            activate(visible[0].target);
+          }
+        }, { rootMargin: "-34% 0px -44% 0px", threshold: 0 });
+        chapters.forEach(function (chapter) { observer.observe(chapter); });
+      } else {
+        window.addEventListener("scroll", function () {
+          var nearest = chapters.reduce(function (best, chapter) {
+            var distance = Math.abs(chapter.getBoundingClientRect().top - window.innerHeight * .42);
+            return distance < best.distance ? { chapter: chapter, distance: distance } : best;
+          }, { chapter: chapters[0], distance: Infinity });
+          activate(nearest.chapter);
+        }, { passive: true });
+      }
+    }());
+  </script>
+</body>
+</html>
